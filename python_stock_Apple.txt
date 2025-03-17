@@ -1,0 +1,26 @@
+#interview question
+#array [9,1,6,7,3,8] is stock prices for each days
+#ask which day buy and which day sell to make biggest profit
+#Apple interview 2-17-2025
+import numpy as np
+
+a1=np.array([9,1,6,7,3,8])
+#a1.max()
+#print(a1.max())
+#t1 = np.where(a1==a1.max())[0][0]
+#print(np.where(a1==a1.max())[0][0])
+a1.min()
+print(a1.min())
+t2 = np.where(a1==a1.min())[0][0]
+print(np.where(a1==a1.min())[0][0])
+
+length= len(a1)
+print(length)
+t1=t2
+for j in range(t2+1, length): 
+    #pass
+    print(a1[j])
+    if (a1[j]>t2): t1=np.where(a1==a1[j])[0][0]
+print(t1)
+
+print("to make biggest profit to buy on day ",t1+1,"sale on day",t2+1)

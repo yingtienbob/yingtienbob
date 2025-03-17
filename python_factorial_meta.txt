@@ -1,0 +1,22 @@
+import math
+import unittest
+
+def factorial_math(n):
+    return math.factorial(n)
+
+# Example usage
+#print(factorial_math(7))  # Output: 120
+
+class TestAddFunction(unittest.TestCase):
+    def test_add_positive_numbers1(self):
+        self.assertEqual(factorial_math(5), 120)
+
+    def test_add_negtive_numbers2(self):
+        self.assertEqual(factorial_math(1),1)
+
+#    def test_add_neg_numbers(self):
+#        self.assertEqual(fact(-1), -1)
+#        self.assertEqual(add(-1, 2), 1)
+
+if __name__ == '__main__':
+    unittest.main()
