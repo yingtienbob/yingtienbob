@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <string.h>
+
+int countSplits(char *s) {
+    int n = strlen(s);
+    int count = 0;
+
+    
+    printf("S string is: %s\n", s);
+    for (int i = 1; i < n; i++) {
+        // Split the string into two parts
+        int x_count1 = 0, y_count1 = 0;
+        int x_count2 = 0, y_count2 = 0;
+    
+        printf("i is: %d\n", i);
+        //char *x;
+        //char *y;
+        char *x = (char *)malloc(i + 1);
+        char *y = (char *)malloc((n - i) + 1);
+
+        strncpy(x, s, i);
+        x[i] = '\0';
+        strcpy(y, s + i);
+        printf("x: %s\n", x);
+        printf("y: %s\n", y);
+
+        // Check if at least one part has equal 'x' and 'y' counts
+        
+        for (int j = 0; j < strlen(x); j++) {
+            if (x[j] == 'x') x_count1++;
+            if (x[j] == 'y') y_count1++;
+        }
+
+        
+        for (int j = 0; j < strlen(y); j++) {
+            if (y[j] == 'x') x_count2++;
+            if (y[j] == 'y') y_count2++;
+        }
+        printf("x_count1 is: %d\n",x_count1);
+        printf("x_count2 is: %d\n",x_count2);
+        printf("y_count1 is: %d\n",y_count1);
+        printf("y_count2 is: %d\n",y_count2);
+        
+        
+        if ((x_count1 == y_count1) || (x_count2 == y_count2)) {
+            count++;
+            printf("x, y, count is: %s, %s,%d\n",x,y,count);
+        }
+
+        free(x);
+        free(y);
+    }
+
+    return count;
+}
+
+int main() {
+    char s[100];
+    printf("Enter a string: ");
+    scanf("%s", s);
+
+    int result = countSplits(s);
+    printf("Number of valid splits: %d\n", result);
+
+    return 0;
+}
