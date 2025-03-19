@@ -28,13 +28,16 @@ int main() {
             s[i] = mid[0];
             printf("before merge: %s\n", s);
             if(length-j<=2){
-                
+                s[1+j]='\0';
             }
+            else
+            {
             for(j=i+1;j<length-1;j++){
                 printf("i,j,length: %d %d %d\n", i,j,length);
                 s[j]=s[1+j];
                 s[1+j]='\0';
                 printf("merge x time: %s\n", s);
+            }
             }
             printf("after merge s: %s\n", s);
             length = length-1;
