@@ -1,3 +1,8 @@
+//you are given a string a consisting N lowercase english letters. 
+//in how many ways can we split s into two non-empty parts, 
+//such that in at least one part the letter 'x' and the letter 'y' occur the same number of times
+//Ying Song 3-19-2025
+
 #include <stdio.h>
 #include <string.h>
 
