@@ -1,0 +1,32 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+
+int main() {
+    char s[100];
+    char x[100];
+    char mid[100];
+    int i=0, j=0, length=0,sum=0;
+    printf("Enter a string: ");
+    scanf("%s", s);
+    length = strlen(s);
+    while(i<length){
+        sum = s[i]-'0'+s[i+1]-'0';
+        if(sum<10){
+            strc
+        }
+    }
+
+    //int result = countSplits(s);
+    printf("Number of valid splits: %d\n", result);
+
+    return 0;
+}
