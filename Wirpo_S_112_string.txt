@@ -13,31 +13,38 @@ Write your code in this editor and press "Run" button to compile and execute it.
 
 int main() {
     char s[100];
-    char x[100];
-    char mid[100];
-    char sumstring[100];
+    char mid[1];
     int i=0, j=0, length=0,sum=0;
     printf("Enter a string: ");
     scanf("%s", s);
     length = strlen(s);
-    while(i<length){
+     
+    while(i<length-1){
+
         sum = s[i]-'0'+s[i+1]-'0';
         printf("sum: %d\n", sum);
         if(sum<10){
-            sumstring[0] = sum+'0';
-            strcat(x, sumstring);
-            printf("x: %s\n", x);
-            for(j=1;j<length-2;j++){
-                x[j]=s[2+j];
-                printf("x: %s\n", x);
+            mid[0] = sum+'0';
+            s[i] = mid[0];
+            printf("before merge: %s\n", s);
+            if(length-j<=2){
+                
             }
-            printf("x: %s\n", x);
+            for(j=i+1;j<length-1;j++){
+                printf("i,j,length: %d %d %d\n", i,j,length);
+                s[j]=s[1+j];
+                s[1+j]='\0';
+                printf("merge x time: %s\n", s);
+            }
+            printf("after merge s: %s\n", s);
+            length = length-1;
+            j=i;
         }
-        i=i+1;
+        else i=i+1;
+        
     }
+    s[1+j]='\0';
+    printf("Last string is: %s\n", s);
 
-    //int result = countSplits(s);
-    //printf("Number of valid splits: %d\n", result);
-
-    //return 0;
+    return 0;
 }
