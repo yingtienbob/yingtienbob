@@ -1,7 +1,8 @@
 /******************************************************************************
 string 123-456-890 correct,telephone number return 1
 oyherwise failed return 0
-
+Check whether given string is a valid phone number.
+3-19-2025
 *******************************************************************************/
 
 #include <stdio.h>
