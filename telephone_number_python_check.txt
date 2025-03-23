@@ -1,0 +1,25 @@
+def check(string):
+    length = len(string)
+    if(length>12): 
+        return 1
+    elif((string[3]=='-') and (string[7]=='-')):	
+	        print("- - check correctstring[0]",int(string[0]))
+	        if((int(string[0]) >= 0)and(int(string[0])<10)and
+	            (int(string[1]) >= 0)and(int(string[1])<10)and
+	            (int(string[2]) >= 0)and(int(string[2])<10)and
+	            (int(string[4]) >= 0)and(int(string[4])<10)and
+	            (int(string[5]) >= 0)and(int(string[5])<10)and
+	            (int(string[6]) >= 0)and(int(string[6])<10)and
+	            (int(string[8]) >= 0)and(int(string[8])<10)and
+	            (int(string[9]) >= 0)and(int(string[9])<10)and
+	            (int(string[10]) >= 0)and(int(string[10])<10)):
+	            return 0
+    return 1
+    	
+def main():
+    print("Hello, World!")
+    string = "123-1232878"
+    print("string check resturn=",check(string))
+    
+if __name__ == "__main__":
+    main()   
