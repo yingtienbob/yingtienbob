@@ -1,0 +1,11 @@
+string = input("Enter a string: ")
+print("You entered:", string)
+#string = "fhsjdhsjkdhsjkhidddddd"
+length = len(string)
+count =0
+for i in range(0,length):
+    if(string[i]=="d"):
+        count=count+1
+        if(count==3):
+            print("third d position is ", i)
+            break
