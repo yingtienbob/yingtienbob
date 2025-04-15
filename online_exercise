@@ -1,0 +1,123 @@
+'''
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+'''
+print ('Hello World')
+list1 = [1, 2, 3, 4]
+list2 = [3, 4, 5, 6]
+common = list(set(list1) & set(list2))
+print(common) #[3, 4]
+
+list1 = [1, 2, 2, 3, 4, 4]
+unique_list1 = list(set(list1))
+print(unique_list1) #[1, 2, 3, 4]
+
+def is_palindrome(s):
+    return s == s[::-1]
+print(is_palindrome("radar"))  # True
+print(is_palindrome("hello"))  # False
+
+def longest_word(sentence):
+    words = sentence.split()
+    print(words)
+    return max(words, key=len)
+
+print(longest_word("The fox jumps overunyiu the lazy dog"))  # jumps
+
+def first_non_repeating_char(s):
+    char_count = {}
+    for char in s:
+        print("char_count.get(char, 0)=",char_count)
+        char_count[char] = char_count.get(char, 0) + 1
+    for char in s:
+        if char_count[char] == 1:
+            return char
+    return None
+
+print(first_non_repeating_char("nxtwave"))  # n
+
+def count_uppercase(s):
+    return sum(1 for char in s if char.isupper())
+
+print(count_uppercase("NxtwAve"))  # 1
+
+def binary_search(arr, target):
+    arr=sorted(arr)
+    low, high=0,len(arr)-1
+    print(arr)
+        
+    while(low<=high):
+        mid=(low+high)//2
+        print("mid=",low,high,mid,arr[mid])
+        if(arr[mid]>target):
+            high=mid-1
+        elif(arr[mid]<target):
+            low=mid+1
+        else:
+            return mid
+    return -1
+        
+print(binary_search([1, 2, 3, 4, 5,1,2,6,7], 3))  # 2
+
+
+def flatten(nested_list):
+    flat_list = []
+    for item in nested_list:
+        if isinstance(item, list):
+            flat_list.extend(flatten(item))
+            print(flat_list)
+        else:
+            flat_list.append(item)
+    return flat_list
+
+print(flatten([1, [2, [3, 4], 5], 6]))  # [1, 2, 3, 4, 5, 6]
+
+def max_subarray_sum(arr):
+    max_sum = current_sum = arr[0]
+    print("max_sum=",max_sum)
+    for num in arr[1:]:
+        current_sum = max(num, current_sum + num)
+        print("current_sum=",current_sum)
+        max_sum = max(max_sum, current_sum)
+        print("max_sum=", max_sum, current_sum)
+    return max_sum
+
+print(max_subarray_sum([-2, 1, -3, 4, -1, 2, 1, -5, 4]))  # 6
+
+def calculator(a, b, operation):
+    if(operation =='add'):
+        return  a+b
+    elif(operation =='abstract'):
+        return  a-b
+    elif(operation =='multiply'):
+        return  a*b
+    elif(operation =='devide'):
+        if(b==0):
+            return 0
+        else:
+            return  a%b
+    else: return "invalid operation"
+    
+
+print(calculator(5, 3, 'devide'))  # 8
+
+def is_perfect_square(x):
+    print("x**0.5=",x**0.5)
+    return int(x**0.5)**2 == x
+
+print(is_perfect_square(16))  # True
+
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+        print("a%b=", b)
+    return a
+print(gcd(48, 18))  # 6
+
+def celsius_to_fahrenheit(temps):
+    return [(temp * 9/5) + 32 for temp in temps]
+print(celsius_to_fahrenheit([0, 20, 37]))  # [32.0, 68.0, 98.6]
