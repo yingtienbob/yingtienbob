@@ -1,0 +1,34 @@
+'''
+
+
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+'''
+print ('Hello World')
+
+def twoSum(List, target):
+    arr1 = []
+    maxlen = len(List)
+    print("printlen",maxlen)
+    i = 0
+    j=0
+    for i in range(maxlen):
+        print("i=", i,List[i])
+        rest_number = target-List[i]
+        #print("j0=",j)
+        for j in range(i+1,maxlen):
+            print("j1=",j)
+            if rest_number == List[j]:
+                arr1.append([i,j])
+    return arr1
+
+if __name__ == "__main__":        
+    arr = [1, 5, 7, -1, 5]
+    target = 6
+    #twoSum(arr, target)
+    print("result=",twoSum(arr, target))
+        
+    
