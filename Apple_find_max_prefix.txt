@@ -1,0 +1,26 @@
+'''
+
+Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string "".
+
+Example 1:
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+'''
+print ('Hello World')
+
+def flprefix(arr):
+    strs.sort()
+    first = arr[0]
+    last = arr[-1]
+    length = len(first)
+    i=0
+    while i<length and first[i]==last[i]:
+        i+=1
+    return first[:i]
+
+
+if __name__=="__main__":
+    strs = ["flower","flow","flight"]
+    print("max_prefix=",flprefix(strs))
