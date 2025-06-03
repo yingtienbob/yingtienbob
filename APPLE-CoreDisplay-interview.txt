@@ -1,0 +1,37 @@
+class Card:
+     def __init__(self, value, suite):
+         self.value = value
+         self.suite = suite
+
+     def __str__(self):
+         return(f"{self.value} of {self.suite}")
+
+
+ class Deck:
+     SUITES = ['Diamonds', 'Hearts', 'Clubs', 'Spades']
+     VALUES = ['A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K']
+
+     def __init__(self):
+         self.cards = []
+         self.populate_deck()
+
+     @classmethod
+     def random_index(cls, lower, upper):
+         return random.randint(lower, upper)
+    
+     def populate_deck(self):
+         for suite in Deck.SUITES:
+             for value  in Deck.VALUES:
+                 self.cards.append(Card(value=value, suite=suite))
+
+     def print_deck(self):
+         for card in self.cards:
+             print(card)
+
+     def shuffle(self):
+         pass
+
+
+ self = Deck()
+ self.shuffle()
+ self.print_deck()
